@@ -11,7 +11,21 @@
 @title[What's Vagrant?]
 ## What's Vagrant?
 
-Simple and "disposable" Virtual Machines(VMs). 
+#### Simple and "disposable" Virtual Machines(VMs). 
 
 
 ---
+@title[Install Vagrant]
+
+## Debian 
+```
+apt-get install vagrant
+```
+
+
+---
+@title[Get Vagrant going...]
+```
+vagrant init ubuntu/xenial64
+vagrant up
+```
