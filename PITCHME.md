@@ -198,3 +198,28 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.56.200"
 end
 ```
+--- 
+@title[Provisioning with Vagrant]
+## Provisioning
+What's Provisioning?
+
+> Provisioning is the enterprise-wide configuration, deployment and management of multiple types of IT system resources. An organization's IT or HR department oversees the provisioning process, which is applied to monitor user and customer access rights and privacy while ensuring enterprise resource security. 
+[Source](https://www.techopedia.com/definition/4069/provisioning-computing-computing) 
+
+Vagrant allows you to define a provisioning tool or script to execute script to install Software. 
+
+--- 
+@title[Provisioning with Vagrant]
+## Provisioning example
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.network "private_network", ip: "192.168.56.200"
+  config.vm.provision "shell", inline: <<-SHELL
+     apt-get update
+     apt-get install -y apache2
+   SHELL
+
+end
+```
+
