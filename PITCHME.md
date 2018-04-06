@@ -3,10 +3,10 @@
 ##### A Vagrant for Workshop for beginners
 
 ---
-@title[What's Vagrant? ]
+@title[What's Vagrant?]
+## What's Vagrant?
 
 Simple and "disposable" Virtual Machines(VMs). 
 
 
-
---
+---
