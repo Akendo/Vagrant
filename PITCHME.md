@@ -68,7 +68,7 @@ For help on any individual subcommand run `vagrant box <subcommand> -h`
 @title[Vagrant boxes...]
 ## A Vagrant Box
 Vagrant provicdes more boxes on they website ["Discover Vagrant Boxes"](https://app.vagrantup.com/boxes/search).
-With `vagrant box add USER/BOXNAME` a pre-deposited box cann be downloaded.
+With `vagrant box add USER/BOXNAME` a pre-deposited box can be downloaded.
 
 ---
 @title[Vagrant boxes...]
@@ -91,7 +91,7 @@ default login credentials. They could be a backdoor...and worse...
 
 ---
 @title[Vagrant is...]
-## A Vagrant is not a virtualization Tool 
+## Vagrant is not a virtualization Tool 
 Rather than that a tool that utilized technologies like VirtualBox. It's not limited to VirtualBox and use different type of provder to produce VMs. SOme provider can be:
 - VirtualBox
 - VMware
@@ -139,9 +139,10 @@ vagrant plugin install vagrant-vbguest
 
 ```bash
 git clone git@github.com:kaorimatz/packer-templates.git
+cd packer-templates
 packer-io  build -only=virtualbox-iso archlinux-x86_64.json
 ```
-Thank onto Satoshi Matsumoto for his contribution
+Thank onto Satoshi Matsumoto for his contribution and work! 
 
 --- 
 @title[Packer]
