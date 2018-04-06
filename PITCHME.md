@@ -73,6 +73,25 @@ With `vagrant box add USER/BOXNAME` a pre-deposited box can be downloaded.
 ---
 @title[Vagrant boxes...]
 ## A Vagrant Box
+A box will be decleared out-dated once a new verion is online.
+```
+Bringing machine 'default' up with 'virtualbox' provider...                                                                                                   
+==> default: Checking if box 'ubuntu/xenial64' is up to date...                                                                                               
+==> default: A newer version of the box 'ubuntu/xenial64' for provider 'virtualbox' is                                                                        
+==> default: available! You currently have version '20180329.0.0'. The latest is version
+==> default: '20180406.0.0'. Run `vagrant box update` to update.
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.`
+```
+---
+@title[Vagrant boxes...]
+## A Vagrant Box
+You can update them with `vagrant box update`.
+
+
+---
+@title[Vagrant boxes...]
+## A Vagrant Box
 A Vagrant box is a specially crafted VM image that will be used to create copies of it. This copies will be used to spawned VMs for `vagrant up` run.
 
 VM images need to have:
@@ -176,6 +195,6 @@ end
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "archlinux-x86_64"
-  vm_settings.vm.network "private_network", ip: "192.168.56.200"
+  config.vm.network "private_network", ip: "192.168.56.200"
 end
 ```
