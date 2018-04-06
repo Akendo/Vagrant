@@ -150,3 +150,32 @@ Thank onto Satoshi Matsumoto for his contribution and work!
 ```bash
 vagrant box add archlinux-x86_64 archlinux-x86_64-virtualbox.box
 ```
+--- 
+@title[The Vagrantfile]
+## Taking a look at a `Vagrantfile`
+You'll get be default a draft version. A minmal version of this file looke like this:
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/xenial64"
+end
+```
+
+--- 
+@title[The Vagrantfile]
+## Taking a look at a `Vagrantfile`
+We'll change this to our new box:
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.box = "archlinux-x86_64"
+end
+```
+--- 
+@title[The Vagrantfile]
+## Taking a look at a `Vagrantfile`
+### Some extra network interface helps a lot
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.box = "archlinux-x86_64"
+  vm_settings.vm.network "private_network", ip: "192.168.56.200"
+end
+```
