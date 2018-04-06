@@ -43,9 +43,11 @@ vagrant up
 ### The next command will start up a VM. 
 
 ---
-@title[Get Vagrant going...]
-## Get Vagrant going...
-Vagrant will download the Image Ubuntu xenial64 and run `vagrant box add` to include this image to the local set of boxes.
+@title[Vagrant boxes...]
+## A Vagrant Box
+Vagrant will download a Ubuntu xenial64  Image and will run `vagrant box add`.
+The Image will be include to the set of boxes Vagrant can use. 
+
 Boxes are managed via `vagrant box`:
 ```bash
  vagrant box
@@ -62,6 +64,25 @@ Available subcommands:
 
 For help on any individual subcommand run `vagrant box <subcommand> -h`
 ```
+---
+@title[Vagrant boxes...]
+## A Vagrant Box
+Vagrant provicdes more boxes on they website ["Discover Vagrant Boxes"](https://app.vagrantup.com/boxes/search).
+With `vagrant box add USER/BOXNAME` a pre-deposited box cann be downloaded.
+
+---
+@title[Vagrant boxes...]
+## A Vagrant Box
+A Vagrant box is a specially crafted VM image that will be used to create copies of it. This copies will be used to spawned VMs for `vagrant up` run.
+
+VM images need to have:
+ 
+ - a "vagrant" User 
+ -  Root Password: "vagrant" 
+ -  Password-less Sudo 
+ -  SSH Tweaks 
+
+
 
 
 ---
