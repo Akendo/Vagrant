@@ -82,7 +82,26 @@ VM images need to have:
  -  Password-less Sudo 
  -  SSH Tweaks 
 
+---
+@title[Vagrant boxes...]
+## A Vagrant Box
+### Some notes:
+You shoud not trust any boxes from the internet. There have been exposed vagrant server in the internet with the
+default login credentials. They could be a backdoor...and worse...
 
+---
+@title[Vagrant is...]
+## A Vagrant is not a virtualization Tool 
+Rather than that a tool that utilized technologies like VirtualBox. It's not limited to VirtualBox and use different type of provder to produce VMs. SOme provider can be:
+- VirtualBox
+- VMware
+- Docker
+- Custom one, like AWS and such...
+
+---
+@title[Side note]
+## Differents between a VM and Docker
+![VM vs Docker](http://bhawk.hu/wp-content/uploads/2016/03/vm-vs-docker-diagram.png)
 
 
 ---
@@ -113,3 +132,20 @@ vagrant plugin install vagrant-vbguest
   <path class="text" fill="#000000" d="M56.77 14.1h12.48c7.4 0 10.13 3 10.13 8.65v4.37c0 5.57-3 8.6-10.42 8.6h-6.14v10.37h-6.05zm12.15 5.33h-6.1v11h6.1c3.41 0 4.42-1.25 4.42-3.89v-3.32c0-2.64-1.11-3.79-4.42-3.79zm30.93 26.66H95l-.43-1.58a12.79 12.79 0 0 1-7 2.07c-4.27 0-6.1-2.93-6.1-7 0-4.76 2.07-6.58 6.82-6.58H94v-2.43c0-2.59-.72-3.51-4.47-3.51a32.68 32.68 0 0 0-6.48.72l-.72-4.47a30.52 30.52 0 0 1 8-1.1c7.35 0 9.51 2.59 9.51 8.45zM94 37.25h-4.33c-1.92 0-2.45.53-2.45 2.31s.53 2.35 2.35 2.35a9.22 9.22 0 0 0 4.43-1.2zm9.35.34V31.2c0-6.29 2.74-9 10.09-9a20.15 20.15 0 0 1 5.72.86l-.72 4.8a21.31 21.31 0 0 0-4.85-.62c-3.36 0-4.37 1-4.37 3.89v6.48c0 2.88 1 3.89 4.37 3.89a19.79 19.79 0 0 0 4.85-.62l.72 4.8a19.29 19.29 0 0 1-5.72.86c-7.35.03-10.09-2.66-10.09-8.95zm19.5 8.5V13.14l5.86-.82v33.77zm19.89-23.39l-6.87 11.58L143 46.09h-6.44l-7.06-11.82 6.68-11.58zm12.2 19.06a24.51 24.51 0 0 0 7.16-1.1l.91 4.42a25.11 25.11 0 0 1-8.6 1.49c-7.35 0-9.89-3.41-9.89-9v-6.2c0-4.95 2.21-9.13 9.7-9.13s9.17 4.37 9.17 9.41v5h-13v1.2c-.02 2.81.99 3.91 4.55 3.91zm-4.56-9.85h7.44v-1.14c0-2.21-.67-3.75-3.55-3.75s-3.89 1.54-3.89 3.75zM179 27.6a45.86 45.86 0 0 0-6.2 3.41v15.08H167V22.7h4.95l.38 2.59a26.21 26.21 0 0 1 6.15-3.07z"></path>
 </svg>
 
+
+--- 
+@title[Packer]
+## Let's create a new Vagrant Box
+
+```bash
+git clone git@github.com:kaorimatz/packer-templates.git
+packer-io  build -only=virtualbox-iso archlinux-x86_64.json
+```
+Thank onto Satoshi Matsumoto for his contribution
+
+--- 
+@title[Packer]
+## Let's create a new Vagrant Box
+```bash
+vagrant box add archlinux-x86_64 archlinux-x86_64-virtualbox.box
+```
