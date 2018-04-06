@@ -18,16 +18,21 @@
 @title[Install Vagrant]
 
 ## Debian 
-```
+```bash
 apt-get install vagrant
+```
+## archlinux
+```bash
+pacman -S vagrant
 ```
 
 
 ---
 @title[Get Vagrant going...]
 ## Get Vagrant going...
-```
+```bash
 mkdir MyFirstVagrantRun
+cd MyFirstVagrantRun
 vagrant init ubuntu/xenial64
 vagrant up
 ```
@@ -36,6 +41,28 @@ vagrant up
 ## Get Vagrant going...
 ### The first command will create a `Vagrantfile`
 ### The next command will start up a VM. 
+
+---
+@title[Get Vagrant going...]
+## Get Vagrant going...
+Vagrant will download the Image Ubuntu xenial64 and run `vagrant box add` to include this image to the local set of boxes.
+Boxes are managed via `vagrant box`:
+```bash
+ vagrant box
+Usage: vagrant box <subcommand> [<args>]
+
+Available subcommands:
+     add
+     list
+     outdated
+     prune
+     remove
+     repackage
+     update
+
+For help on any individual subcommand run `vagrant box <subcommand> -h`
+```
+
 
 ---
 @title[Get Vagrant going...]
