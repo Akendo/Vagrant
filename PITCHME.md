@@ -139,7 +139,11 @@ vagrant destroy
 ## Get some plugins Vagrant...
 ```
 vagrant plugin install vagrant-vbguest
-```
+
++++
+@title[Vagrant plugins]
+## Sometimes kernel modules have trouble.
+### The plugin keep the version in sync with the current running one. 
 
 --- 
 @title[Packer]
@@ -222,4 +226,21 @@ Vagrant.configure("2") do |config|
 
 end
 ```
+--- 
+@title[Extending the Vagrantfile]
+## Using vagrant for development
+#### adding `develop` folder to the VM
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.network "private_network", ip: "192.168.56.200"
+  config.vm.synced_folder "develop/", "/srv/develop"
+end
 
+```
+--- 
+@title[Extending the Vagrantfile]
+## Using vagrant for development
+#### By default the vagrant folder is mount to `/vagrant`
+
+--- 
