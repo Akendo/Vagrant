@@ -242,7 +242,25 @@ end
 @title[Extending the Vagrantfile]
 ## Using vagrant for development
 #### By default the vagrant folder is mount to `/vagrant`
-
 So we can acces all other folders of the current vagrant folder. 
 
 --- 
+@title[Extending the Vagrantfile]
+## Using vagrant for development
+```
+Vagrant.configure("2") do |config|                                                                                                                            
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.network "private_network", ip: "192.168.56.200"
+  config.vm.synced_folder "develop/", "/srv/develop" 
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get install cargo -y
+  SHELL
+end
+
+```
+
+---
+@title[End]
+## Thanks for listen
+
+
