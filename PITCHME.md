@@ -139,11 +139,11 @@ vagrant destroy
 ## Get some plugins Vagrant...
 ```
 vagrant plugin install vagrant-vbguest
-
+```
 +++
 @title[Vagrant plugins]
-## Sometimes kernel modules have trouble.
-### The plugin keep the version in sync with the current running one. 
+When using VirtualBox it needs some kernel modules to work smoothly
+The plugin installs the latest (possible) kernel moduls into the VM.
 
 --- 
 @title[Packer]
@@ -242,5 +242,7 @@ end
 @title[Extending the Vagrantfile]
 ## Using vagrant for development
 #### By default the vagrant folder is mount to `/vagrant`
+
+So we can acces all other folders of the current vagrant folder. 
 
 --- 
